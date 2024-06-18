@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>To-Do List Pelajaran</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="satu">
+            <div class="judul">
+                <h1>Input List Pelajaran</h1>
+            </div>
+            <div id="date-time">
+                <span id="current-date"></span>
+                <span id="current-time"></span>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <img src="WhatsApp Image 2024-06-13 at 17.16.24.jpeg">
+            <div id="task-input">
+                <input type="number" id="editNumber" placeholder="Nomor Tugas" min="1" step="1" required>
+                <input type="date" id="due-date">
+                <select id="subject">
+                    <option value="" disabled selected>Pilih Mata Pelajaran</option>
+                    <option value="Matematika">Matematika</option>
+                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                    <option value="Sejarah">Sejarah</option>
+                    <option value="PKK">PKK</option>
+                    <option value="Kejuruan">Kejuruan</option>
+                    <option value="Pjok">PJOK</option>
+                    <option value="PPKN">PPKN</option>
+                    <option value="PAI">PAI</option>
+                    <option value="Bahasa Jawa">Bahasa Jawa</option>
+                    <option value="BK">BK</option>
+                </select>
+                <input type="text" id="task" placeholder="Tambahkan Catatan">
+                <button onclick="addTask()">Kirim</button>
+            </div>
+        </div>
+
+        <div id="task-table">
+            <div class="h2">
+                <h2>Daftar List Tugas</h2>
+            </div>
+
+            <div class="gabung">
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search" oninput="searchTasks()">
+                </div>
+                <div id="filters">
+                    <select id="filter" onchange="filterTasks()">
+                        <option value="all">Semua</option>
+                        <option value="completed">Selesai</option>
+                        <option value="not-completed">Belum Selesai</option>
+                    </select>
+                </div>
+                <div id="sorting">
+                    <select id="sort" onchange="sortTasks()">
+                        <option value="newest">Tanggal Terbaru</option>
+                        <option value="oldest">Tanggal Terlama</option>
+                    </select>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nomor Tugas</th>
+                        <th>Keterangan waktu</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Catatan</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="task-list"></tbody>
+            </table>
+        </div>
+
+        <!-- pop up -->
+        <div id="editTaskModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Edit Tugas</h2>
+                <label for="editDueDate"> Tanggal:</label>
+                <input type="date" id="editDueDate">
+                <!-- <label for="editNumber">Nomor Tugas:</label>
+                <input type="number" id="editNumber" name="editNumber" min="1" step="1" required> -->
+                <label for="editSubject">Mata Pelajaran:</label>
+                <select id="editSubject">
+                    <option value="Matematika">Matematika</option>
+                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                    <option value="Sejarah">Sejarah</option>
+                    <option value="PKK">PKK</option>
+                    <option value="Kejuruan">Kejuruan</option>
+                    <option value="Pjok">PJOK</option>
+                    <option value="PPKN">PPKN</option>
+                    <option value="PAI">PAI</option>
+                    <option value="Bahasa Jawa">Bahasa Jawa</option>
+                    <option value="BK">BK</option>
+                </select>
+                <label for="editText">Catatan:</label>
+                <input type="text" id="editText">
+                <button onclick="saveEditedTask()">Simpan</button>
+            </div>
+        </div>
+        <script src="toDoList.js"></script>
+</body>
+
+</html>

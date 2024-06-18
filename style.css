@@ -1,0 +1,316 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #06838b;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgb(166, 201, 206);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.satu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.judul {
+    background-color: #09beaf;
+    width: 300px;
+    height: 100px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: 10px;
+    margin: 15px;
+    margin-left: -25px;
+    color: #fff;
+    text-align: center;
+}
+
+#date-time {
+    background-color: #09beaf;
+    border-radius: 5px;
+    width: 25%;
+    height: 35%;
+    margin-top: 20px;
+
+}
+
+#current-date,
+#current-time {
+    justify-content: space-around;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+#current-date::before,
+#current-time::before {
+    content: attr(data-icon);
+    margin-right: 20px;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.form-container {
+    display: flex;
+    background-color: #0b917a;
+    border-radius: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+
+}
+
+.form-container img {
+    width: 35%;
+    height: 55%;
+    margin-left: 10px;
+    border-radius: 45px;
+
+}
+
+
+#task-input {
+    border-style: dashed;
+    border-radius: 45px;
+    border-width: 1px;
+    border-color: #fff;
+
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 50%;
+    height: 10%;
+    margin-top: 45px;
+    margin-left: 27%;
+    padding: 8px;
+    width: 45%;
+    border: 1px solid #ccc;
+    color: #808080;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 8px 15px;
+    margin-left: 28%;
+    margin-bottom: 15%;
+    width: 35%;
+    margin-top: 45px;
+    cursor: pointer;
+    background-color: #09beaf;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #06838b;
+}
+
+#task-table {
+    margin-top: 20px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+#task-table table {
+    width: 102%;
+    border-collapse: collapse;
+}
+
+#task-table th,
+#task-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+
+}
+
+#task-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+.h2 {
+    color: #fff;
+    text-align: center;
+    background-color: #09beaf;
+    width: 300px;
+    height: 100px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-top: 10px;
+    margin: 15px;
+    margin-left: 525px;
+    font-size: larger;
+
+}
+
+.gabung {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 15px;
+}
+
+.search-container {
+    padding-right: 10%;
+    padding-bottom: 2px;
+}
+
+
+#search {
+    z-index: 1;
+    width: 135%;
+    height: 45%;
+    margin-left: 5%;
+    margin-right: 100%;
+    font-size: 15px;
+    border-radius: 20px;
+}
+
+#filters {
+    width: 110px;
+    padding-right: 45px;
+    height: 80px
+}
+
+#filter {
+    width: 160%;
+    height: 45%;
+    border-radius: 20px;
+    color: #756d6d;
+}
+
+#sorting{
+    width: 110px;
+    height: 80px ;
+}
+
+#sort{
+    width: 155%;
+    height: 45%;
+    border-radius: 20px;
+    color: #756d6d;
+    margin-left: 90px;
+}
+
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+
+}
+
+.action-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Input pada pop-up */
+.modal-content input[type="text"],
+.modal-content input[type="date"] {
+    width: calc(100% - 40px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.modal-content input[type="date"] {
+    width: calc(100% - 40px);
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#editSubject {
+    width: calc(100% - 40px);
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 8px 0;
+}
+
+#editSubject option {
+    font-size: 14px;
+}
+
+#editNumber {
+    width: 50%;
+    height: 10%;
+    margin-top: 45px;
+    margin-left: 27%;
+    padding: 8px;
+    width: 45%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+option[disabled][selected] {
+    color: #808080; /* Warna abu-abu untuk teks opsi yang tidak dapat dipilih */
+}
+#subject{
+    color: #808080;
+}
