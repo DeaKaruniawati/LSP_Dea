@@ -243,6 +243,9 @@ function saveEditedTask() {
 function deleteTaskPrompt(id) {
     if (confirm("Anda yakin ingin menghapus tugas ini?")) {
         tasks = tasks.filter(task => task.id !== id);
+        tasks.forEach((task, index) => {
+            task.number = index + 1; 
+        });
         localStorage.setItem('tasks', JSON.stringify(tasks));
         loadTasks();
     }
